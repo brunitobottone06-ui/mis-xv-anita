@@ -81,7 +81,7 @@ export default function EventDetails() {
       <div className="map-container">
         <iframe
           title="Club Médico del Sur"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.4312678121665!2d-65.59737152458428!3d-27.34808387638977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423d0a6c25a589f%3A0xc0f19c81b2123d24!2sClub%20M%C3%A9dico%20del%20Sur!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
+          src="https://maps.google.com/maps?q=-27.3513373,-65.6073629&z=17&hl=es&output=embed"
           width="100%"
           height="280"
           style={{ border: 0, display: 'block' }}

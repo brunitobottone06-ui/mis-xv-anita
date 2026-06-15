@@ -37,7 +37,10 @@ const S = {
     fontSize: '2.6rem',
     fontWeight: 700,
     letterSpacing: '0.55em',
+    paddingLeft: '0.55em',
     marginBottom: '10px',
+    width: '100%',
+    textAlign: 'center',
   },
   anitaName: {
     fontFamily: "'Cinzel', serif",
