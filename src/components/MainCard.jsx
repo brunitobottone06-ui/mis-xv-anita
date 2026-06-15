@@ -39,7 +39,7 @@ export default function MainCard({ guestType }) {
             fontFamily: "'Montserrat', sans-serif",
             fontSize: '0.52rem',
             letterSpacing: '0.18em',
-            color: 'rgba(100,100,100,0.38)',
+            color: 'rgba(100,100,100,0.80)',
             textDecoration: 'none',
             marginTop: '8px',
           }}
