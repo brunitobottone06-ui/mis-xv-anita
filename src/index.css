@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #050505;
+  color: rgba(210, 210, 210, 0.9);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100svh;
+  text-align: unset;
+  border-inline: none;
+  display: block;
+}
+
+/* ============================
+   SILVER GRADIENT TEXT
+   ============================ */
+.silver-text {
+  background: linear-gradient(
+    90deg,
+    #6e6e6e 0%,
+    #c8c8c8 20%,
+    #ffffff 40%,
+    #e0e0e0 60%,
+    #c0c0c0 80%,
+    #6e6e6e 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerH 3.5s linear infinite;
+}
+
+.anita-text {
+  background: linear-gradient(
+    135deg,
+    #8a8a8a 0%,
+    #e8e8e8 18%,
+    #ffffff 32%,
+    #f5f5f5 50%,
+    #d0d0d0 66%,
+    #a0a0a0 80%,
+    #d4d4d4 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer2d 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(220, 220, 220, 0.18));
+}
+
+/* ============================
+   KEYFRAMES
+   ============================ */
+@keyframes shimmerH {
+  0%   { background-position: -250% center; }
+  100% { background-position: 250% center; }
+}
+
+@keyframes shimmer2d {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.05; transform: scale(0.4); }
+  50%       { opacity: 0.85; transform: scale(1.4); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealScale {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ============================
+   LAYOUT HELPERS
+   ============================ */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.45), transparent);
+}
+
+/* ============================
+   COMPONENTS
+   ============================ */
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  background: rgba(14, 14, 14, 0.9);
+  border: 1px solid rgba(192, 192, 192, 0.18);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.payment-card {
+  background: linear-gradient(145deg, rgba(14, 14, 14, 0.97), rgba(22, 22, 22, 0.92));
+  border: 1px solid rgba(192, 192, 192, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.section-card {
+  background: rgba(11, 11, 11, 0.85);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(11, 11, 11, 0.85);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 192, 192, 0.14);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+.guest-btn {
+  width: 100%;
+  padding: 18px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(210, 210, 210, 0.85);
+  background: transparent;
+  border: 1px solid rgba(192, 192, 192, 0.32);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.guest-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.guest-btn:hover::before { opacity: 1; }
+.guest-btn:hover {
+  border-color: rgba(230, 230, 230, 0.7);
+  color: #ffffff;
+  box-shadow: 0 0 30px rgba(200, 200, 200, 0.22), inset 0 0 20px rgba(200, 200, 200, 0.04);
+}
+.guest-btn:active { transform: scale(0.975); }
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(210, 210, 210, 0.85);
+  background: rgba(11, 11, 11, 0.85);
+  border: 1px solid rgba(192, 192, 192, 0.28);
+  transition: all 0.3s ease;
+}
+.whatsapp-btn:hover {
+  border-color: rgba(220, 220, 220, 0.6);
+  box-shadow: 0 0 22px rgba(180, 180, 180, 0.2);
+  color: #fff;
+}
+
+.copy-btn {
+  width: 100%;
+  padding: 12px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(192, 192, 192, 0.35);
+  background: transparent;
+  color: rgba(210, 210, 210, 0.85);
+}
+.copy-btn.copied {
+  border-color: rgba(100, 200, 100, 0.55);
+  color: rgba(120, 220, 120, 0.9);
+  background: rgba(100, 200, 100, 0.06);
+}
+.copy-btn:not(.copied):hover {
+  border-color: rgba(230, 230, 230, 0.6);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(180, 180, 180, 0.18);
+}
+
+/* ============================
+   ANIMATION HELPERS
+   ============================ */
+.anim-fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease-out forwards;
+}
+.anim-reveal {
+  opacity: 0;
+  animation: revealScale 1s ease-out forwards;
+}
+.anim-float {
+  animation: float 6s ease-in-out infinite;
+}
